@@ -4,4 +4,8 @@
 
 (def pwd (.getCanonicalPath (io/file "./src/clojure_solutions/")))
 
-(defn input [file] (slurp (str pwd "/d" file ".input")))
+(defn problem-file [file] (str pwd "/d" file ".input"))
+
+(defn input [file] (slurp (problem-file file)))
+
+(defn input-seq [file] (line-seq (io/reader (problem-file file))))
